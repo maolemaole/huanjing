@@ -1,0 +1,97 @@
+<!-- 1. 手机主界面 -->
+<div class="phone-frame">
+  <div class="app-grid">
+    <!-- 每个APP对应一个角色 -->
+    <div class="app-icon" data-character="AI助理">
+      <img src="chat-icon.png" alt="AI助理">
+      <span>AI助理</span>
+    </div>
+    <div class="app-icon" data-character="神秘人">
+      <img src="mystery-icon.png" alt="神秘人">
+      <span>神秘人</span>
+    </div>
+  </div>
+
+  <!-- 2. 对话浮层 -->
+  <div id="dialog-modal" class="hidden">
+    <div class="dialog-header">
+      <h2 id="character-name">AI助理</h2>
+      <button class="close-btn">×</button>
+    </div>
+    <div id="chat-container"></div>
+    <input type="text" id="user-input" placeholder="输入消息...">
+    <button id="send-btn">发送</button>
+  </div>
+</div>
+
+<style>
+/* 手机界面样式 */
+.phone-frame {
+  width: 375px;
+  height: 667px;
+  background: #f0f0f0;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.app-icon {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.app-icon:hover {
+  transform: scale(1.1);
+}
+</style>
+
+<script>
+// 3. 交互逻辑
+const characters = {
+  "AI助理": {
+    dialogues: ["你好，有什么可以帮您？", "今天天气不错"],
+    avatar: "ai.png"
+  },
+  "神秘人": {
+    dialogues: ["你终于找到我了...", "这个秘密不能告诉别人"],
+    avatar: "mystery.png"
+  }
+};
+
+document.querySelectorAll('.app-icon').forEach(icon => {
+  icon.addEventListener('click', () => {
+    const character = icon.dataset.character;
+    openDialog(character);
+  });
+});
+
+function openDialog(character) {
+  // 显示对话窗口
+  document.getElementById('dialog-modal').classList.remove('hidden');
+  // 加载对话记录
+  displayMessages(character);
+}
+
+// 消息发送逻辑
+document.getElementById('send-btn').addEventListener('click', async () => {
+  const input = document.getElementById('user-input').value;
+  if (!input) return;
+
+  // 简单版：随机回复
+  const responses = characters[currentCharacter].dialogues;
+  const reply = responses[Math.floor(Math.random() * responses.length)];
+
+  // 进阶版：调用API
+  // const reply = await fetchAIResponse(input);
+
+  addMessage('user', input);
+  addMessage('bot', reply);
+});
+</script>
