@@ -1,0 +1,30 @@
+{
+    "start": {
+        "text": "[信号连接中...]\n▶ 已建立量子通讯链接\n▶ 来源：第三旋臂-γ星系探索者",
+        "options": [
+            { "text": "这里是地球文明，请问您是谁？", "next": "alien_intro" },
+            { "text": "立即终止未知连接", "next": "emergency_disconnect" }
+        ]
+    },
+    "alien_intro": {
+        "text": "『以星海之名问候！我是星际考古学家K-7β，正在调查上古文明遗迹。你们的文明如何看待宇宙存在的意义？』",
+        "options": [
+            { "text": "为了生存与繁衍", "next": "survival" },
+            { "text": "寻找终极答案", "next": "truth_seekers" },
+            { "text": "这个问题本身是否有意义？", "next": "meta_question" }
+        ]
+    },
+    "survival": {
+        "text": "『有趣的生物本能观点！但若宇宙终将热寂，生存本身是否只是延缓消亡的徒劳？』",
+        "options": [
+            { "text": "过程即是意义所在", "next": "process" },
+            { "text": "所以需要寻找新出路", "next": "escape" }
+        ]
+    },
+    "ending1": {
+        "text": "『感谢你的视角，这将载入跨维度文明数据库...』\n[连接突然中断]",
+        "options": [
+            { "text": "重新开始", "next": "start" }
+        ]
+    }
+}
