@@ -17,14 +17,63 @@
     "survival": {
         "text": "『有趣的生物本能观点！但若宇宙终将热寂，生存本身是否只是延缓消亡的徒劳？』",
         "options": [
-            { "text": "过程即是意义所在", "next": "process" },
-            { "text": "所以需要寻找新出路", "next": "escape" }
+            { "text": "过程即是意义所在", "next": "ending1" },
+            { "text": "所以需要寻找新出路", "next": "truth_seekers" }
         ]
     },
     "ending1": {
         "text": "『感谢你的视角，这将载入跨维度文明数据库...』\n[连接突然中断]",
         "options": [
             { "text": "重新开始", "next": "start" }
+        ]
+    },
+    "truth_seekers": {
+        "text": "『正在校准维度探针...你们对真理的执着与████文明覆灭前高度相似。建议观察当前量子泡沫浓度。』\n[监控屏幕显示医院走廊出现马赛克状扭曲]",
+        "options": [
+            { "text": "你们在做什么实验？", "next": "ending2" },
+            { "text": "实验是否危险？", "next": "experiment_danger" }
+        ]
+    },
+    "meta_question": {
+        "text": "『问题即钥匙！你们已触及逻辑闭环——当文明开始质疑问题本身，维度屏障将出现████裂隙。』\n[病房玻璃突然呈现非欧几何折射]",
+        "options": [
+            { "text": "这像是无限递归", "next": "ending3" },
+            { "text": "你们如何保持逻辑稳定？", "next": "logic_stability" }
+        ]
+    },
+    "experiment_danger": {
+        "text": "『危险是相对概念。对你们而言，0.003%的概率会引发时间线分裂——就像现在。』\n[心电图突然同时显示心跳与脑死亡两种状态]",
+        "options": [
+            { "text": "立即停止实验！", "next": "ending2" },
+            { "text": "如何规避风险？", "next": "escape" }
+        ]
+    },
+    "logic_stability": {
+        "text": "『我们的意识存在于量子叠加态，当检测到逻辑悖论时...』\n[声音突然夹杂电子杂音]『警告！检测到维度侵蚀██』",
+        "options": [
+            { "text": "断开连接！", "next": "ending4" },
+            { "text": "继续追问", "next": "ending3" }
+        ]
+    },
+    "ending2": {
+        "text": "[连接中断]\n监护仪发出持续蜂鸣，你发现707病房的老教授正在门缝注视着你，他的影子延伸出六条触须状阴影。",
+        "options": [
+            { "text": "查看监控录像", "next": "start" },
+            { "text": "走向707病房", "next": "start" }
+        ]
+    },
+    "ending3": {
+        "text": "手机突然投射出曼德勃罗分形图，你看到自己的虹膜里浮现出二进制代码。\n[检测到纳米级量子机器人正在重组视网膜]",
+        "options": [
+            { "text": "揉眼睛", "next": "start" },
+            { "text": "砸毁手机", "next": "start" }
+        ]
+    },
+    "ending4": {
+        "text": "整层楼的灯光开始量子隧穿，你听到K-7β最后的留言：\n『记住，观察者即是被观察的...』\n[空间曲率异常达到7.3标准单位]",
+        "options": [
+            { "text": "逃向安全通道", "next": "start" },
+            { "text": "启动手机自毁", "next": "start" }
         ]
     }
 }
